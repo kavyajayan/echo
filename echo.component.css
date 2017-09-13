@@ -1,0 +1,64 @@
+.echo-status {
+  margin-bottom: 3em;
+  width: 90%;
+}
+.red {
+  font-size: 22px;
+  margin-left: 1em;
+  position: relative;
+  bottom: 1em;
+}
+.white {
+  font-size: 54px;
+  color: white;
+}
+
+.editor {
+  margin-left:20px;
+  /*background-color: #b02d25;*/
+  background-color: darkred;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  border: 2px solid white;
+  float: left;
+  margin-bottom: 1px;
+}
+.terminal {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 );
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(217, 215, 255, 0.85) inset, 2px 2px 16px #000;
+    transition: linear box-shadow .2s;
+    padding:0;
+	  float:left;
+    margin-left:5px;
+    margin-top: 280px;
+    width:500px;
+    height: 250px;
+}
+
+.textterminal{
+  text-shadow:0px;
+  text-transform: lowercase;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.inputterminal{
+  background-color: inherit;
+  border:transparent;
+  text-transform: lowercase;
+  width: 350px;
+}
+
+.buttonsize{
+  background-color: #b02d25;
+  color: white;
+  float: right;
+  height: 23px;
+  width: 80px;
+  background-color: darkred;
+  margin-right: 150px;
+  margin-bottom: 2px;
+}

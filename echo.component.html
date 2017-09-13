@@ -1,0 +1,29 @@
+
+<div class="top-banner">
+    <h1>ECHO</h1>
+</div>
+<div class="echo-status">
+  <div class="float-right">
+    <span class="red">LEVEL</span>
+    <span class="white">1</span>
+    <span class="red">RANK</span>
+    <span class="white">___</span>
+  </div>
+</div>
+<div class="terminal">
+  <div>
+    <label class="textterminal"> user@ubuntu:$</label>
+    <input class="inputterminal" #newCommand
+      (keyup.enter)="addCommand(newCommand.value)"
+      (blur)="addCommand(newCommand.value); newCommand.value='' ">
+    <ul><li *ngFor="let command of commands">{{command}}</li></ul>
+  </div>
+</div>
+<div>
+  <textarea class="editor" rows="22" cols="60" placeholder="Enter your code here">
+  </textarea>
+</div>
+<div>
+  <button class="buttonsize" type="submit" value="save">SUBMIT
+  </button>
+</div>
