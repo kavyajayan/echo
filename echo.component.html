@@ -12,11 +12,11 @@
 </div>
 <div class="terminal">
   <div>
+    <ul style="list-style: none;"><li *ngFor="let command of commands" class="textterminal">{{command}}</li></ul>
     <label class="textterminal"> user@ubuntu:$</label>
     <input class="inputterminal" #newCommand
       (keyup.enter)="addCommand(newCommand.value)"
       (blur)="addCommand(newCommand.value); newCommand.value='' ">
-    <ul><li *ngFor="let command of commands">{{command}}</li></ul>
   </div>
 </div>
 <div>

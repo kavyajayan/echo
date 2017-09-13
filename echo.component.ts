@@ -14,7 +14,7 @@ export class EchoComponent implements OnInit {
   commands = [];
   addCommand(newCommand: string) {
     if (newCommand) {
-      this.commands.push(newCommand);
+      this.commands.push("user@ubuntu:$"+newCommand);
     }
   }
 }
