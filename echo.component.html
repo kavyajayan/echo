@@ -10,20 +10,65 @@
     <span class="white">___</span>
   </div>
 </div>
-<div class="terminal">
-  <div>
-    <ul style="list-style: none;"><li *ngFor="let command of commands" class="textterminal">{{command}}</li></ul>
-    <label class="textterminal"> user@ubuntu:$</label>
-    <input class="inputterminal" #newCommand
-      (keyup.enter)="addCommand(newCommand.value)"
-      (blur)="addCommand(newCommand.value); newCommand.value='' ">
+<div>
+  <div class="col-lg-6">
+  <div id="question-box" class="outputstyle">
+    <p>The question goes here!<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
   </div>
-</div>
-<div>
-  <textarea class="editor" rows="22" cols="60" placeholder="Enter your code here">
-  </textarea>
-</div>
-<div>
-  <button class="buttonsize" type="submit" value="save">SUBMIT
-  </button>
+    <div class="terminal-new" (click)="commandTextBox.focus()">
+      <div class="terminal-taskbar">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="terminal-body">
+        <div class="previous-commands">
+          <div *ngFor="let command of commands">
+            <div class="float-left the-user">
+              user@ubuntu:<span>~</span>$
+            </div>
+            <div class="float-left command-container">
+              {{command.usercommand}}
+            </div>
+            <div class="cb"></div>
+            <div class="command-output">
+             {{command.output}}
+            </div>
+          </div>
+        </div>
+        <div class="command-prompt">
+          <div>
+            <div class="float-left the-user">
+              user@ubuntu:<span>~</span>$
+            </div>
+            <div class="float-left command-container">
+              <input type="text" #commandTextBox [(ngModel)]="newCommand" id="newCommand" name="newCommand" (keyup.enter)="addCommand()" />
+            </div>
+            <div class="cb"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="editor">
+      <div class="editor-taskbar">
+        <span></span>
+        <span>Text editor</span>
+        <span></span>
+      </div>
+      <div>
+        <div ace-editor [(text)]="text" class="editor ace_active-line ace_gutter-layer" style="min-height: 200px">
+        </div>
+        <div>{{text}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="cb"></div>
+  <div>
+    <button class="button codesubmit" type="submit" name="nextLevel" value="nextLevel" (onclick)="pressSubmit(text)">SUBMIT</button>
+  </div>
+  <div>
+    <button class="button codesave" type="submit" name="save" value="save">SAVE</button>
+  </div>
 </div>
